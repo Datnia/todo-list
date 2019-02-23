@@ -12,6 +12,12 @@ const productData = [
     price: "$5",
     description:
       " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet, repudiandae. "
+  },
+  {
+    id: "3",
+    name: "Floss",
+    price: "$2",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
   }
 ];
 

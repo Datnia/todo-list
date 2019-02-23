@@ -31,21 +31,9 @@ import productData from "./productData";
 //   );
 // }
 
-// function App() {
-//   const jokesComponents = jokesData.map(joke => (
-//     <Joke key={joke.id} question={joke.question} punchline={joke.punchline} />
-//   ));
-//   return jokesComponents;
-// }
-
 function App() {
-  const productsComponents = productData.map(products => (
-    <Products
-      key={products.id}
-      name={products.name}
-      price={products.price}
-      description={products.description}
-    />
+  const productsComponents = productData.map(product => (
+    <Products key={product.id} product={product} />
   ));
   return productsComponents;
 }
