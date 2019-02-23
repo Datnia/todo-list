@@ -36,13 +36,19 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      answer: "Yes"
+      isLoggedIn: false
     };
   }
   render() {
+    let x;
+    if (this.state.isLoggedIn) {
+      x = "in";
+    } else {
+      x = "out";
+    }
     return (
       <div>
-        <h1>React States {this.state.answer}</h1>
+        <h1>you are currently logged {x}</h1>
       </div>
     );
   }
