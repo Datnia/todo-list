@@ -32,49 +32,20 @@ import React, { Component } from "react";
 //   );
 // }
 
-class App extends React.Component {
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      answer: "Yes"
+    };
+  }
   render() {
     return (
       <div>
-        <Header username="Dat" />
-        <Greeting />
+        <h1>React States {this.state.answer}</h1>
       </div>
     );
   }
 }
-
-class Header extends React.Component {
-  render() {
-    return (
-      <header>
-        <p>Welcome, {this.props.username}!</p>
-      </header>
-    );
-  }
-}
-
-class Greeting extends Component {
-  render() {
-    const date = new Date();
-    const hours = date.getHours();
-    let timeOfDay;
-
-    if (hours < 12) {
-      timeOfDay = "morning";
-    } else if (hours >= 12 && hours < 17) {
-      timeOfDay = "afternoon";
-    } else {
-      timeOfDay = "night";
-    }
-    return <h1>Good {timeOfDay} to you, sir or madam!</h1>;
-  }
-}
-
-// function App() {
-//   const productsComponents = productData.map(product => (
-//     <Products key={product.id} product={product} />
-//   ));
-//   return productsComponents;
-// }
 
 export default App;
