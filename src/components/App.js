@@ -1,6 +1,8 @@
 import React from "react";
-import Joke from "./Joke";
-import jokesData from "./jokesData";
+import Products from "./Products";
+import productData from "./productData";
+// import Joke from "./Joke";
+// import jokesData from "./jokesData";
 // import ToDoItem from "./TodoItem";
 // import "../style.css";
 // import Navbar from "./Header";
@@ -29,11 +31,23 @@ import jokesData from "./jokesData";
 //   );
 // }
 
+// function App() {
+//   const jokesComponents = jokesData.map(joke => (
+//     <Joke key={joke.id} question={joke.question} punchline={joke.punchline} />
+//   ));
+//   return jokesComponents;
+// }
+
 function App() {
-  const jokesComponents = jokesData.map(joke => (
-    <Joke key={joke.id} question={joke.question} punchline={joke.punchline} />
+  const productsComponents = productData.map(products => (
+    <Products
+      key={products.id}
+      name={products.name}
+      price={products.price}
+      description={products.description}
+    />
   ));
-  return jokesComponents;
+  return productsComponents;
 }
 
 export default App;
