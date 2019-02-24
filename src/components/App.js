@@ -3,9 +3,9 @@ import React, { Component } from "react";
 // import productData from "./productData";
 // import Joke from "./Joke";
 // import jokesData from "./jokesData";
-// import ToDoItem from "./TodoItem";
+import ToDoItem from "./TodoItem";
 import "../style.css";
-// import todoData from "./todoData";
+import todoData from "./todoData";
 // import Navbar from "./Header";
 // import MainContent from "./MainContent";
 // import Footer from "./Footer";
@@ -20,25 +20,40 @@ import "../style.css";
 //   );
 // }
 
-// class App extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       todos: todoData
-//     };
-//   }
-//   render() {
-//     const todoComponents = this.state.todos.map(task => (
-//       <ToDoItem key={task.id} task={task} />
-//     ));
-//     return (
-//       <div className="todo-list">
-//         <h1>To Do List</h1>
-//         {todoComponents}
-//       </div>
-//     );
-//   }
-// }
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      todos: todoData
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange(id) {
+    this.setState(prevState => {
+      const newTodo = prevState.todos.map(todo => {
+        if (todo.id === id) {
+          todo.completed = !todo.completed;
+        }
+        return todo;
+      });
+      return {
+        todos: newTodo
+      };
+    });
+  }
+
+  render() {
+    const todoComponents = this.state.todos.map(task => (
+      <ToDoItem key={task.id} task={task} handleChange={this.handleChange} />
+    ));
+    return (
+      <div className="todo-list">
+        <h1>To Do List</h1>
+        {todoComponents}
+      </div>
+    );
+  }
+}
 
 // class App extends Component {
 //   constructor(props) {
@@ -66,31 +81,5 @@ import "../style.css";
 //     );
 //   }
 // }
-
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      count: 0
-    };
-    this.handleEvents = this.handleEvents.bind(this);
-  }
-
-  handleEvents() {
-    this.setState(prevState => {
-      return {
-        count: prevState.count + 3
-      };
-    });
-  }
-  render() {
-    return (
-      <div>
-        <h1>{this.state.count}</h1>
-        <button onMouseOver={this.handleEvents} />
-      </div>
-    );
-  }
-}
 
 export default App;

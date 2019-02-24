@@ -6,9 +6,7 @@ function ToDoItem(props) {
       <input
         type="checkbox"
         checked={props.task.completed}
-        onChange={() => {
-          alert("hi");
-        }}
+        onChange={() => props.handleChange(props.task.id)}
       />
       <p>{props.task.task}</p>
     </div>
