@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import Conditional from "./Conditional";
+// import Conditional from "./Conditional";
 // import Products from "./Products";
 // import productData from "./productData";
 // import Joke from "./Joke";
 // import jokesData from "./jokesData";
-// import ToDoItem from "./TodoItem";
-// import "../style.css";
-// import todoData from "./todoData";
+import ToDoItem from "./TodoItem";
+import "../style.css";
+import todoData from "./todoData";
 // import Navbar from "./Header";
 // import MainContent from "./MainContent";
 // import Footer from "./Footer";
@@ -21,39 +21,39 @@ import Conditional from "./Conditional";
 //   );
 // }
 
-// class App extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       todos: todoData
-//     };
-//     this.handleChange = this.handleChange.bind(this);
-//   }
-//   handleChange(id) {
-//     this.setState(prevState => {
-//       const newTodo = prevState.todos.map(todo => {
-//         if (todo.id === id) {
-//           todo.completed = !todo.completed;
-//         }
-//         return todo;
-//       });
-//       return {
-//         todos: newTodo
-//       };
-//     });
-//   }
-//   render() {
-//     const todoComponents = this.state.todos.map(task => (
-//       <ToDoItem key={task.id} task={task} handleChange={this.handleChange} />
-//     ));
-//     return (
-//       <div className="todo-list">
-//         <h1>To Do List</h1>
-//         {todoComponents}
-//       </div>
-//     );
-//   }
-// }
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      todos: todoData
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange(id) {
+    this.setState(prevState => {
+      const newTodo = prevState.todos.map(todo => {
+        if (todo.id === id) {
+          todo.completed = !todo.completed;
+        }
+        return todo;
+      });
+      return {
+        todos: newTodo
+      };
+    });
+  }
+  render() {
+    const todoComponents = this.state.todos.map(task => (
+      <ToDoItem key={task.id} task={task} handleChange={this.handleChange} />
+    ));
+    return (
+      <div className="todo-list">
+        <h1>To Do List</h1>
+        {todoComponents}
+      </div>
+    );
+  }
+}
 
 // class App extends Component {
 //   constructor(props) {
@@ -82,28 +82,33 @@ import Conditional from "./Conditional";
 //   }
 // }
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLoading: true
-    };
-  }
+// class App extends Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       isLoggedIn: false
+//     };
+//     this.handleClick = this.handleClick.bind(this);
+//   }
 
-  componentDidMount() {
-    setTimeout(() => {
-      this.setState({
-        isLoading: false
-      });
-    }, 1500);
-  }
-  render() {
-    return (
-      <div>
-        <Conditional isLoading={this.state.isLoading} />
-      </div>
-    );
-  }
-}
+//   handleClick() {
+//     this.setState(prevState => {
+//       return {
+//         isLoggedIn: !prevState.isLoggedIn
+//       };
+//     });
+//   }
+
+//   render() {
+//     let buttonText = this.state.isLoggedIn ? "LOG OUT" : "LOG IN";
+//     let displayText = this.state.isLoggedIn ? "in" : "out";
+//     return (
+//       <div>
+//         <h2>You are logged {displayText}</h2>
+//         <button onClick={this.handleClick}>{buttonText}</button>
+//       </div>
+//     );
+//   }
+// }
 
 export default App;
