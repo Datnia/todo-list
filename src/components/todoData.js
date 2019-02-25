@@ -16,6 +16,11 @@ const todoData = [
   },
   {
     id: "4",
+    task: "Gym",
+    completed: false
+  },
+  {
+    id: "5",
     task: "Grocery Shop",
     completed: false
   }
