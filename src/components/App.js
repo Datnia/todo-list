@@ -141,16 +141,146 @@ import React, { Component } from "react";
 //   }
 // }
 
+// class App extends Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       firstName: "",
+//       lastName: "",
+//       employee: true,
+//       gender: "",
+//       favColor: "green"
+//     };
+//     this.handleChange = this.handleChange.bind(this);
+//   }
+
+//   handleChange(event) {
+//     const { name, value, type, checked } = event.target;
+//     type === "checkbox"
+//       ? this.setState({
+//           [name]: checked
+//         })
+//       : this.setState({ [name]: value });
+//   }
+
+//   handleSubmit() {
+
+//   }
+
+//   render() {
+//     return (
+//       <div>
+//         <form onSubmit={this.handleSubmit}>
+//           <input
+//             type="text"
+//             value={this.state.firstName}
+//             placeholder="First Name"
+//             name="firstName"
+//             onChange={this.handleChange}
+//           />
+//           <input
+//             type="text"
+//             value={this.state.lastName}
+//             placeholder="Last Name"
+//             name="lastName"
+//             onChange={this.handleChange}
+//           />
+//           <br />
+//           <label>
+//             Employee?
+//             <input
+//               type="checkbox"
+//               name="employee"
+//               checked={this.state.employee}
+//               onChange={this.handleChange}
+//             />
+//           </label>
+//           <br />
+//           <br />
+//           <label>
+//             <input
+//               type="radio"
+//               name="gender"
+//               value="male"
+//               checked={this.state.gender === "male"}
+//               onChange={this.handleChange}
+//             />
+//             Male
+//           </label>
+//           <br />
+
+//           <label>
+//             <input
+//               type="radio"
+//               name="gender"
+//               value="female"
+//               checked={this.state.gender === "female"}
+//               onChange={this.handleChange}
+//             />
+//             Female
+//           </label>
+//           <br />
+//           <br />
+//           <select
+//             value={this.state.favColor}
+//             onChange={this.handleChange}
+//             name="favColor"
+//           >
+//             <option value="red">Red</option>
+//             <option value="green">Green</option>
+//             <option value="blue">Blue</option>
+//           </select>
+//           <h1>
+//             {this.state.firstName} {this.state.lastName} {this.state.favColor}
+//           </h1>
+//           <button>Submit</button>
+//         </form>
+//       </div>
+//     );
+//   }
+// }
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {  }
+  constructor() {
+    super();
+    this.state = {};
   }
-  render() { 
-    return (  );
+
+  render() {
+    return (
+      <main>
+        <form>
+          <input placeholder="First Name" />
+          <br />
+          <input placeholder="Last Name" />
+          <br />
+          <input placeholder="Age" />
+          <br />
+
+          {/* Create radio buttons for gender here */}
+          <br />
+
+          {/* Create select box for location here */}
+          <br />
+
+          {/* Create check boxes for dietary restrictions here */}
+          <br />
+
+          <button>Submit</button>
+        </form>
+        <hr />
+        <h2>Entered information:</h2>
+        <p>Your name: {/* First and last name here */}</p>
+        <p>Your age: {/* Age here */}</p>
+        <p>Your gender: {/* Gender here */}</p>
+        <p>Your destination: {/* Destination here */}</p>
+        <p>
+          Your dietary restrictions:
+          {/* Dietary restrictions here, comma separated */}
+        </p>
+      </main>
+    );
   }
 }
- 
 
 export default App;
