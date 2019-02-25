@@ -16,7 +16,7 @@ const todoData = [
   },
   {
     id: "4",
-    task: "Take out the trash",
+    task: "Grocery Shop",
     completed: true
   }
 ];
