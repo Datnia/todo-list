@@ -1,12 +1,13 @@
 import React, { Component } from "react";
+// import Form from "./FormContainer";
 // import Conditional from "./Conditional";
 // import Products from "./Products";
 // import productData from "./productData";
 // import Joke from "./Joke";
 // import jokesData from "./jokesData";
-// import ToDoItem from "./TodoItem";
-// import "../style.css";
-// import todoData from "./todoData";
+import ToDoItem from "./TodoItem";
+import "../style.css";
+import todoData from "./todoData";
 // import Navbar from "./Header";
 // import MainContent from "./MainContent";
 // import Footer from "./Footer";
@@ -21,39 +22,39 @@ import React, { Component } from "react";
 //   );
 // }
 
-// class App extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       todos: todoData
-//     };
-//     this.handleChange = this.handleChange.bind(this);
-//   }
-//   handleChange(id) {
-//     this.setState(prevState => {
-//       const newTodo = prevState.todos.map(todo => {
-//         if (todo.id === id) {
-//           todo.completed = !todo.completed;
-//         }
-//         return todo;
-//       });
-//       return {
-//         todos: newTodo
-//       };
-//     });
-//   }
-//   render() {
-//     const todoComponents = this.state.todos.map(task => (
-//       <ToDoItem key={task.id} task={task} handleChange={this.handleChange} />
-//     ));
-//     return (
-//       <div className="todo-list">
-//         <h1>To Do List</h1>
-//         {todoComponents}
-//       </div>
-//     );
-//   }
-// }
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      todos: todoData
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange(id) {
+    this.setState(prevState => {
+      const newTodo = prevState.todos.map(todo => {
+        if (todo.id === id) {
+          todo.completed = !todo.completed;
+        }
+        return todo;
+      });
+      return {
+        todos: newTodo
+      };
+    });
+  }
+  render() {
+    const todoComponents = this.state.todos.map(task => (
+      <ToDoItem key={task.id} task={task} handleChange={this.handleChange} />
+    ));
+    return (
+      <div className="todo-list">
+        <h1>To Do List</h1>
+        {todoComponents}
+      </div>
+    );
+  }
+}
 
 // class App extends Component {
 //   constructor(props) {
@@ -240,153 +241,8 @@ import React, { Component } from "react";
 //   }
 // }
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      firstName: "",
-      lastName: "",
-      age: "",
-      gender: "",
-      destination: "",
-      isVegan: false,
-      isVegetarian: false,
-      isWater: false
-    };
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(event) {
-    const { name, value, checked, type } = event.target;
-    type === "checkbox"
-      ? this.setState({
-          [name]: checked
-        })
-      : this.setState({ [name]: value });
-  }
-
-  render() {
-    return (
-      <main>
-        <form>
-          <input
-            type="text"
-            name="firstName"
-            value={this.state.firstName}
-            onChange={this.handleChange}
-            placeholder="First Name"
-          />
-          <br />
-          <input
-            type="text"
-            name="lastName"
-            value={this.state.lastName}
-            onChange={this.handleChange}
-            placeholder="Last Name"
-          />
-          <br />
-          <input
-            type="number"
-            name="age"
-            value={this.state.age}
-            onChange={this.handleChange}
-            placeholder="Age"
-          />
-          <br />
-          <br />
-          Gender:
-          <br />
-          <label>
-            <input
-              type="radio"
-              name="gender"
-              value="Male"
-              checked={this.state.gender === "Male"}
-              onChange={this.handleChange}
-            />
-            Male
-          </label>
-          <br />
-          <label>
-            <input
-              type="radio"
-              name="gender"
-              value="Female"
-              checked={this.state.gender === "Female"}
-              onChange={this.handleChange}
-            />
-            Female
-          </label>
-          <br />
-          <br />
-          <select
-            name="destination"
-            onChange={this.handleChange}
-            value={this.state.destination}
-          >
-            <option value="">--Please Choose a Destination--</option>
-            <option value="Vietnam">Vietnam</option>
-            <option value="Greece">Greece</option>
-            <option value="Thailand">Thailand</option>
-            <option value="France">France</option>
-            <option value="Canada">Canada</option>
-          </select>
-          <br />
-          <br />
-          Dietary Restrictions?
-          <br />
-          <label>
-            <input
-              type="checkbox"
-              name="isVegan"
-              onChange={this.handleChange}
-              checked={this.state.isVegan}
-            />
-            Vegan
-          </label>
-          <br />
-          <label>
-            <input
-              type="checkbox"
-              name="isVegetarian"
-              onChange={this.handleChange}
-              checked={this.state.isVegetarian}
-            />
-            Vegetarian
-          </label>
-          <br />
-          <label>
-            <input
-              type="checkbox"
-              name="isWater"
-              onChange={this.handleChange}
-              checked={this.state.isWater}
-            />
-            Water Only
-          </label>
-          <br />
-          <br />
-          <button>Submit</button>
-        </form>
-        <hr />
-        <h2>Entered information:</h2>
-        <p>
-          Your name: {this.state.firstName} {this.state.lastName}
-        </p>
-        <p>Your age: {this.state.age}</p>
-        <p>Your gender: {this.state.gender}</p>
-        <p>Your destination: {this.state.destination}</p>
-        <p>
-          Your dietary restrictions:
-          <br />
-          <br />
-          {this.state.isVegan ? "Vegan " : null}
-          {this.state.isVegetarian ? "Vegetarian" : null}
-          {this.state.isWater ? " Water only" : null}
-        </p>
-      </main>
-    );
-  }
-}
+// function App() {
+//   return <Form />;
+// }
 
 export default App;
