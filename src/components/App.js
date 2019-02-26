@@ -248,7 +248,7 @@ class App extends Component {
       lastName: "",
       age: "",
       gender: "",
-      destination: "Vietnam",
+      destination: "",
       isVegan: false,
       isVegetarian: false,
       isWater: false
@@ -294,9 +294,9 @@ class App extends Component {
           />
           <br />
           <br />
+          Gender:
+          <br />
           <label>
-            Gender:
-            <br />
             <input
               type="radio"
               name="gender"
@@ -305,7 +305,9 @@ class App extends Component {
               onChange={this.handleChange}
             />
             Male
-            <br />
+          </label>
+          <br />
+          <label>
             <input
               type="radio"
               name="gender"
@@ -317,12 +319,12 @@ class App extends Component {
           </label>
           <br />
           <br />
-
           <select
             name="destination"
             onChange={this.handleChange}
             value={this.state.destination}
           >
+            <option value="">--Please Choose a Destination--</option>
             <option value="Vietnam">Vietnam</option>
             <option value="Greece">Greece</option>
             <option value="Thailand">Thailand</option>
@@ -331,10 +333,9 @@ class App extends Component {
           </select>
           <br />
           <br />
-
+          Dietary Restrictions?
+          <br />
           <label>
-            Dietary Restrictions?
-            <br />
             <input
               type="checkbox"
               name="isVegan"
@@ -342,7 +343,9 @@ class App extends Component {
               checked={this.state.isVegan}
             />
             Vegan
-            <br />
+          </label>
+          <br />
+          <label>
             <input
               type="checkbox"
               name="isVegetarian"
@@ -350,18 +353,19 @@ class App extends Component {
               checked={this.state.isVegetarian}
             />
             Vegetarian
-            <br />
+          </label>
+          <br />
+          <label>
             <input
               type="checkbox"
               name="isWater"
               onChange={this.handleChange}
               checked={this.state.isWater}
             />
-            Water only
+            Water Only
           </label>
           <br />
           <br />
-
           <button>Submit</button>
         </form>
         <hr />
@@ -374,9 +378,11 @@ class App extends Component {
         <p>Your destination: {this.state.destination}</p>
         <p>
           Your dietary restrictions:
-          {this.state.isVegan ? "Vegan" : null}
+          <br />
+          <br />
+          {this.state.isVegan ? "Vegan " : null}
           {this.state.isVegetarian ? "Vegetarian" : null}
-          {this.state.isWater ? "Water only" : null}
+          {this.state.isWater ? " Water only" : null}
         </p>
       </main>
     );
