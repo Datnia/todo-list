@@ -54,7 +54,22 @@ input[type="checkbox"]:focus {
 }
 
 button {
-  width: 10%;
-  margin: 0 auto;
-  display: block;
+  margin: 0 5px;
+  display: inline-block;
+  background-color: rgb(255, 38, 38);
+  border: 1px;
+  border-radius: 3px;
+  width: 8%;
+  color: #222222;
+}
+
+form {
+  text-align: center;
+  margin-top: 10px;
+}
+
+form input {
+  text-decoration: none;
+  border: none;
+  border-bottom: 1px solid steelblue;
 }
