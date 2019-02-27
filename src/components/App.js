@@ -33,14 +33,6 @@ class App extends Component {
         <h1>To Do List</h1>
         {todoComponents}
         <br />
-        <form onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            placeholder="Enter task"
-            onChange={this.handleChange}
-          />
-          <button>+</button>
-        </form>
       </div>
     );
   }
