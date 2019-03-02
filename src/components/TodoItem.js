@@ -18,6 +18,9 @@ function ToDoItem(props) {
           {props.task.task}
         </p>
       </label>
+      <button id={props.key} onClick={() => props.onClick(props.task.id)}>
+        -
+      </button>
     </div>
   );
 }
