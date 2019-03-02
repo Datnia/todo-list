@@ -5,6 +5,7 @@ function ToDoItem(props) {
     textDecoration: "line-through",
     color: "grey"
   };
+
   return (
     <div className="todo-item">
       <label>
@@ -19,7 +20,7 @@ function ToDoItem(props) {
         </p>
       </label>
       <button id={props.key} onClick={() => props.onClick(props.task.id)}>
-        -
+        x
       </button>
     </div>
   );
